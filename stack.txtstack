@@ -1,0 +1,63 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+void push();
+int pop();
+void display();
+int stack[5];
+int top =-1;
+
+void main(){
+     int ch;
+     do{
+         printf("\n1.push\n2.pop\n3.display\n4.exit\n");
+         printf("enter the ch :");
+         scanf("%d",&ch);
+         switch(ch){
+             case 1:
+                 push();
+                 break;
+            case 2:
+                  printf("\nthe delete element is %d",pop());
+                  break;
+            case 3:
+                 display();
+                 break;
+            case 4:
+                exit(0);
+         }
+     }
+     while(ch!=4);
+    
+}
+void push(){
+    int varun_cha_stack;
+    if(top==4){
+        printf("varun cha stack full ahe");
+    }else{
+        varun_cha_stack = stack[top];
+        printf("number taka: ");
+        scanf("%d",&varun_cha_stack);
+        top =top+1;
+        stack[top]=varun_cha_stack;
+    }
+}
+int pop(){
+    int varun_cha_stack;
+    if(top==-1){
+        printf("varun chy stack madhe jaga nhi");
+    }else{
+        varun_cha_stack = stack[top];
+        top=top-1;
+    }return(varun_cha_stack);
+}
+void display(){
+    int i;
+    if(top==-1){
+        printf("stack madhe jaga nahi");
+    }else{
+        for(i=top;i>=0;i--){
+            printf("\n%d",stack[i]);
+        }
+    }
+}
